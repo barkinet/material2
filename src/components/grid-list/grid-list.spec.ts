@@ -110,14 +110,14 @@ describe('MdGridList', () => {
 
     return builder.overrideTemplate(TestGridList, template)
         .createAsync(TestGridList).then((fixture: ComponentFixture<TestGridList>) => {
-          fixture.componentInstance.height = 300;
+          fixture.componentInstance.height = '300px';
           fixture.detectChanges();
           let tile = fixture.debugElement.query(By.directive(MdGridTile));
 
           // 149.5 * 2 = 299px + 1px gutter = 300px
           expect(getProp(tile, 'height')).toBe('149.5px');
 
-          fixture.componentInstance.height = 200;
+          fixture.componentInstance.height = '200px';
           fixture.detectChanges();
 
           // 99.5 * 2 = 199px + 1px gutter = 200px

@@ -20,8 +20,8 @@ import {
   NG_VALUE_ACCESSOR,
   ControlValueAccessor,
   NgModel,
-  NgIf,
-} from '@angular/common';
+} from '@angular/forms';
+import {NgIf} from '@angular/common';
 import {BooleanFieldValue} from '@angular2-material/core/annotations/field-value';
 import {MdError} from '@angular2-material/core/errors/error';
 import {Observable} from 'rxjs/Observable';
@@ -146,9 +146,9 @@ export class MdInput implements ControlValueAccessor, AfterContentInit, OnChange
   @Input() @BooleanFieldValue() disabled: boolean = false;
   @Input() id: string = `md-input-${nextUniqueId++}`;
   @Input() list: string = null;
-  @Input() max: string = null;
+  @Input() max: string | number = null;
   @Input() maxLength: number = null;
-  @Input() min: string = null;
+  @Input() min: string | number = null;
   @Input() minLength: number = null;
   @Input() placeholder: string = null;
   @Input() @BooleanFieldValue() readOnly: boolean = false;
